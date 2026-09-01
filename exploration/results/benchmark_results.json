@@ -1,0 +1,16 @@
+{
+  "config": {
+    "batch_size": 2,
+    "seq_len": 2048,
+    "d_model": 512,
+    "num_heads": 8,
+    "ffn_dim": 2048,
+    "num_layers": 12,
+    "causal": true
+  },
+  "results": [
+    null,
+    null,
+    null
+  ]
+}

@@ -1,0 +1,1117 @@
+[
+  {
+    "direction": 1,
+    "impl": "/srv/vault/hot/SMU-Vault/Competition/2026TikTokTechJam/Track3/Rayner/exploration/directions/direction1/direction1_optimized.py",
+    "device": "cuda",
+    "cuda_available": true,
+    "configs": [
+      {
+        "config": "small",
+        "batch_size": 4,
+        "seq_len": 128,
+        "d_model": 64,
+        "num_heads": 4,
+        "num_layers": 2,
+        "baseline": {
+          "latency_ms": {
+            "mean": 0.866,
+            "median": 0.843,
+            "std": 0.045,
+            "p95": 0.95,
+            "p99": 0.974
+          },
+          "throughput_tokens_sec": 591039.7,
+          "peak_memory_mb": 11.1
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 0.897,
+            "median": 0.865,
+            "std": 0.059,
+            "p95": 0.999,
+            "p99": 1.003
+          },
+          "throughput_tokens_sec": 571002.6,
+          "peak_memory_mb": 11.8
+        },
+        "speedup": 0.97,
+        "throughput_gain": -3.4,
+        "memory_savings_pct": -5.7,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      },
+      {
+        "config": "medium",
+        "batch_size": 8,
+        "seq_len": 512,
+        "d_model": 128,
+        "num_heads": 8,
+        "num_layers": 4,
+        "baseline": {
+          "latency_ms": {
+            "mean": 4.257,
+            "median": 4.326,
+            "std": 0.256,
+            "p95": 4.593,
+            "p99": 4.62
+          },
+          "throughput_tokens_sec": 962215.1,
+          "peak_memory_mb": 37.2
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 4.283,
+            "median": 4.329,
+            "std": 0.287,
+            "p95": 4.676,
+            "p99": 4.802
+          },
+          "throughput_tokens_sec": 956413.8,
+          "peak_memory_mb": 39.6
+        },
+        "speedup": 0.99,
+        "throughput_gain": -0.6,
+        "memory_savings_pct": -6.4,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      },
+      {
+        "config": "large",
+        "batch_size": 16,
+        "seq_len": 1024,
+        "d_model": 256,
+        "num_heads": 8,
+        "num_layers": 6,
+        "baseline": {
+          "latency_ms": {
+            "mean": 45.998,
+            "median": 46.003,
+            "std": 0.479,
+            "p95": 46.631,
+            "p99": 46.731
+          },
+          "throughput_tokens_sec": 356186.1,
+          "peak_memory_mb": 225.3
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 44.265,
+            "median": 44.29,
+            "std": 0.391,
+            "p95": 44.841,
+            "p99": 44.916
+          },
+          "throughput_tokens_sec": 370131.6,
+          "peak_memory_mb": 234.3
+        },
+        "speedup": 1.04,
+        "throughput_gain": 3.9,
+        "memory_savings_pct": -4.0,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      }
+    ],
+    "validation_tests": [
+      {
+        "test": "causal_padded",
+        "accuracy_passed": true,
+        "speedup": 1.051,
+        "baseline_ms": 3.4007,
+        "optimized_ms": 3.2348
+      },
+      {
+        "test": "float16_causal",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "bfloat16_padded",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "minimal_sequence",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "compiled",
+        "accuracy_passed": true,
+        "speedup": 6.944,
+        "baseline_ms": 1.0204,
+        "optimized_ms": 0.1469
+      }
+    ]
+  },
+  {
+    "direction": 2,
+    "impl": "/srv/vault/hot/SMU-Vault/Competition/2026TikTokTechJam/Track3/Rayner/exploration/directions/direction2/direction2_optimized.py",
+    "device": "cuda",
+    "cuda_available": true,
+    "configs": [
+      {
+        "config": "small",
+        "batch_size": 4,
+        "seq_len": 128,
+        "d_model": 64,
+        "num_heads": 4,
+        "num_layers": 2,
+        "baseline": {
+          "latency_ms": {
+            "mean": 0.705,
+            "median": 0.705,
+            "std": 0.01,
+            "p95": 0.719,
+            "p99": 0.72
+          },
+          "throughput_tokens_sec": 725746.4,
+          "peak_memory_mb": 11.1
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 0.911,
+            "median": 0.865,
+            "std": 0.178,
+            "p95": 1.222,
+            "p99": 1.337
+          },
+          "throughput_tokens_sec": 561712.7,
+          "peak_memory_mb": 11.8
+        },
+        "speedup": 0.77,
+        "throughput_gain": -22.6,
+        "memory_savings_pct": -5.7,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      },
+      {
+        "config": "medium",
+        "batch_size": 8,
+        "seq_len": 512,
+        "d_model": 128,
+        "num_heads": 8,
+        "num_layers": 4,
+        "baseline": {
+          "latency_ms": {
+            "mean": 3.993,
+            "median": 3.887,
+            "std": 0.355,
+            "p95": 4.564,
+            "p99": 4.68
+          },
+          "throughput_tokens_sec": 1025712.8,
+          "peak_memory_mb": 37.2
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 3.974,
+            "median": 3.749,
+            "std": 0.401,
+            "p95": 4.637,
+            "p99": 4.696
+          },
+          "throughput_tokens_sec": 1030635.5,
+          "peak_memory_mb": 39.6
+        },
+        "speedup": 1.0,
+        "throughput_gain": 0.5,
+        "memory_savings_pct": -6.4,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      },
+      {
+        "config": "large",
+        "batch_size": 16,
+        "seq_len": 1024,
+        "d_model": 256,
+        "num_heads": 8,
+        "num_layers": 6,
+        "baseline": {
+          "latency_ms": {
+            "mean": 42.563,
+            "median": 42.448,
+            "std": 0.372,
+            "p95": 43.166,
+            "p99": 43.258
+          },
+          "throughput_tokens_sec": 384932.0,
+          "peak_memory_mb": 225.3
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 41.908,
+            "median": 41.899,
+            "std": 0.297,
+            "p95": 42.312,
+            "p99": 42.34
+          },
+          "throughput_tokens_sec": 390947.4,
+          "peak_memory_mb": 234.3
+        },
+        "speedup": 1.02,
+        "throughput_gain": 1.6,
+        "memory_savings_pct": -4.0,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      }
+    ],
+    "validation_tests": [
+      {
+        "test": "causal_padded",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "float16_causal",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "bfloat16_padded",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "minimal_sequence",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "compiled",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      }
+    ]
+  },
+  {
+    "direction": 3,
+    "impl": "/srv/vault/hot/SMU-Vault/Competition/2026TikTokTechJam/Track3/Rayner/exploration/directions/direction3/direction3_optimized.py",
+    "device": "cuda",
+    "cuda_available": true,
+    "configs": [
+      {
+        "config": "small",
+        "batch_size": 4,
+        "seq_len": 128,
+        "d_model": 64,
+        "num_heads": 4,
+        "num_layers": 2,
+        "baseline": {
+          "latency_ms": {
+            "mean": 0.866,
+            "median": 0.829,
+            "std": 0.066,
+            "p95": 0.992,
+            "p99": 1.008
+          },
+          "throughput_tokens_sec": 590893.3,
+          "peak_memory_mb": 11.3
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 0.856,
+            "median": 0.838,
+            "std": 0.046,
+            "p95": 0.946,
+            "p99": 0.962
+          },
+          "throughput_tokens_sec": 598184.9,
+          "peak_memory_mb": 11.9
+        },
+        "speedup": 1.01,
+        "throughput_gain": 1.2,
+        "memory_savings_pct": -5.7,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      },
+      {
+        "config": "medium",
+        "batch_size": 8,
+        "seq_len": 512,
+        "d_model": 128,
+        "num_heads": 8,
+        "num_layers": 4,
+        "baseline": {
+          "latency_ms": {
+            "mean": 4.181,
+            "median": 4.294,
+            "std": 0.316,
+            "p95": 4.598,
+            "p99": 4.634
+          },
+          "throughput_tokens_sec": 979652.3,
+          "peak_memory_mb": 41.2
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 4.129,
+            "median": 4.186,
+            "std": 0.271,
+            "p95": 4.497,
+            "p99": 4.51
+          },
+          "throughput_tokens_sec": 992023.9,
+          "peak_memory_mb": 43.6
+        },
+        "speedup": 1.01,
+        "throughput_gain": 1.3,
+        "memory_savings_pct": -5.8,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      },
+      {
+        "config": "large",
+        "batch_size": 16,
+        "seq_len": 1024,
+        "d_model": 256,
+        "num_heads": 8,
+        "num_layers": 6,
+        "baseline": {
+          "latency_ms": {
+            "mean": 45.356,
+            "median": 45.511,
+            "std": 0.499,
+            "p95": 46.015,
+            "p99": 46.263
+          },
+          "throughput_tokens_sec": 361233.3,
+          "peak_memory_mb": 257.3
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 44.024,
+            "median": 43.87,
+            "std": 0.343,
+            "p95": 44.56,
+            "p99": 44.628
+          },
+          "throughput_tokens_sec": 372157.9,
+          "peak_memory_mb": 266.3
+        },
+        "speedup": 1.03,
+        "throughput_gain": 3.0,
+        "memory_savings_pct": -3.5,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      }
+    ],
+    "validation_tests": [
+      {
+        "test": "causal_padded",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "float16_causal",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "bfloat16_padded",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "minimal_sequence",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "compiled",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      }
+    ]
+  },
+  {
+    "direction": 4,
+    "impl": "/srv/vault/hot/SMU-Vault/Competition/2026TikTokTechJam/Track3/Rayner/exploration/directions/direction4/direction4_optimized.py",
+    "device": "cuda",
+    "cuda_available": true,
+    "configs": [
+      {
+        "config": "small",
+        "batch_size": 4,
+        "seq_len": 128,
+        "d_model": 64,
+        "num_heads": 4,
+        "num_layers": 2,
+        "baseline": {
+          "latency_ms": {
+            "mean": 0.684,
+            "median": 0.674,
+            "std": 0.037,
+            "p95": 0.745,
+            "p99": 0.782
+          },
+          "throughput_tokens_sec": 748930.6,
+          "peak_memory_mb": 31.7
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 0.677,
+            "median": 0.676,
+            "std": 0.013,
+            "p95": 0.699,
+            "p99": 0.707
+          },
+          "throughput_tokens_sec": 755996.5,
+          "peak_memory_mb": 35.0
+        },
+        "speedup": 1.01,
+        "throughput_gain": 0.9,
+        "memory_savings_pct": -10.5,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      },
+      {
+        "config": "medium",
+        "batch_size": 8,
+        "seq_len": 512,
+        "d_model": 128,
+        "num_heads": 8,
+        "num_layers": 4,
+        "baseline": {
+          "latency_ms": {
+            "mean": 3.988,
+            "median": 3.969,
+            "std": 0.235,
+            "p95": 4.332,
+            "p99": 4.391
+          },
+          "throughput_tokens_sec": 1027172.4,
+          "peak_memory_mb": 241.2
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 3.954,
+            "median": 3.985,
+            "std": 0.286,
+            "p95": 4.344,
+            "p99": 4.405
+          },
+          "throughput_tokens_sec": 1036005.3,
+          "peak_memory_mb": 246.8
+        },
+        "speedup": 1.01,
+        "throughput_gain": 0.9,
+        "memory_savings_pct": -2.3,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      },
+      {
+        "config": "large",
+        "batch_size": 16,
+        "seq_len": 1024,
+        "d_model": 256,
+        "num_heads": 8,
+        "num_layers": 6,
+        "baseline": {
+          "latency_ms": {
+            "mean": 34.519,
+            "median": 34.562,
+            "std": 0.401,
+            "p95": 35.037,
+            "p99": 35.122
+          },
+          "throughput_tokens_sec": 474641.0,
+          "peak_memory_mb": 1168.7
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 35.567,
+            "median": 35.437,
+            "std": 0.589,
+            "p95": 36.534,
+            "p99": 36.654
+          },
+          "throughput_tokens_sec": 460657.9,
+          "peak_memory_mb": 1184.6
+        },
+        "speedup": 0.97,
+        "throughput_gain": -2.9,
+        "memory_savings_pct": -1.4,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      }
+    ],
+    "validation_tests": [
+      {
+        "test": "causal_padded",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "float16_causal",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "bfloat16_padded",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "minimal_sequence",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "compiled",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      }
+    ]
+  },
+  {
+    "direction": 5,
+    "impl": "/srv/vault/hot/SMU-Vault/Competition/2026TikTokTechJam/Track3/Rayner/exploration/directions/direction5/direction5_optimized.py",
+    "device": "cuda",
+    "cuda_available": true,
+    "configs": [
+      {
+        "config": "small",
+        "batch_size": 4,
+        "seq_len": 128,
+        "d_model": 64,
+        "num_heads": 4,
+        "num_layers": 2,
+        "baseline": {
+          "latency_ms": {
+            "mean": 1.069,
+            "median": 1.047,
+            "std": 0.049,
+            "p95": 1.161,
+            "p99": 1.191
+          },
+          "throughput_tokens_sec": 479017.6,
+          "peak_memory_mb": 32.0
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 1.078,
+            "median": 1.057,
+            "std": 0.047,
+            "p95": 1.168,
+            "p99": 1.195
+          },
+          "throughput_tokens_sec": 474844.4,
+          "peak_memory_mb": 35.5
+        },
+        "speedup": 0.99,
+        "throughput_gain": -0.9,
+        "memory_savings_pct": -11.2,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      },
+      {
+        "config": "medium",
+        "batch_size": 8,
+        "seq_len": 512,
+        "d_model": 128,
+        "num_heads": 8,
+        "num_layers": 4,
+        "baseline": {
+          "latency_ms": {
+            "mean": 4.122,
+            "median": 4.193,
+            "std": 0.215,
+            "p95": 4.406,
+            "p99": 4.424
+          },
+          "throughput_tokens_sec": 993630.4,
+          "peak_memory_mb": 241.4
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 4.047,
+            "median": 4.096,
+            "std": 0.214,
+            "p95": 4.295,
+            "p99": 4.303
+          },
+          "throughput_tokens_sec": 1012021.2,
+          "peak_memory_mb": 246.8
+        },
+        "speedup": 1.02,
+        "throughput_gain": 1.9,
+        "memory_savings_pct": -2.2,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      },
+      {
+        "config": "large",
+        "batch_size": 16,
+        "seq_len": 1024,
+        "d_model": 256,
+        "num_heads": 8,
+        "num_layers": 6,
+        "baseline": {
+          "latency_ms": {
+            "mean": 36.998,
+            "median": 37.049,
+            "std": 0.251,
+            "p95": 37.285,
+            "p99": 37.303
+          },
+          "throughput_tokens_sec": 442840.1,
+          "peak_memory_mb": 1168.6
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 36.96,
+            "median": 36.957,
+            "std": 0.39,
+            "p95": 37.471,
+            "p99": 37.565
+          },
+          "throughput_tokens_sec": 443290.0,
+          "peak_memory_mb": 1184.6
+        },
+        "speedup": 1.0,
+        "throughput_gain": 0.1,
+        "memory_savings_pct": -1.4,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      }
+    ],
+    "validation_tests": [
+      {
+        "test": "causal_padded",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "float16_causal",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "bfloat16_padded",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "minimal_sequence",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "compiled",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      }
+    ]
+  },
+  {
+    "direction": 6,
+    "impl": "/srv/vault/hot/SMU-Vault/Competition/2026TikTokTechJam/Track3/Rayner/exploration/directions/direction6/direction6_optimized.py",
+    "device": "cuda",
+    "cuda_available": true,
+    "configs": [
+      {
+        "config": "small",
+        "batch_size": 4,
+        "seq_len": 128,
+        "d_model": 64,
+        "num_heads": 4,
+        "num_layers": 2,
+        "baseline": {
+          "latency_ms": {
+            "mean": 1.083,
+            "median": 1.039,
+            "std": 0.105,
+            "p95": 1.277,
+            "p99": 1.359
+          },
+          "throughput_tokens_sec": 472649.6,
+          "peak_memory_mb": 31.5
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 1.04,
+            "median": 1.029,
+            "std": 0.024,
+            "p95": 1.082,
+            "p99": 1.096
+          },
+          "throughput_tokens_sec": 492316.3,
+          "peak_memory_mb": 34.5
+        },
+        "speedup": 1.04,
+        "throughput_gain": 4.2,
+        "memory_savings_pct": -9.8,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      },
+      {
+        "config": "medium",
+        "batch_size": 8,
+        "seq_len": 512,
+        "d_model": 128,
+        "num_heads": 8,
+        "num_layers": 4,
+        "baseline": {
+          "latency_ms": {
+            "mean": 7.771,
+            "median": 7.762,
+            "std": 0.313,
+            "p95": 8.287,
+            "p99": 8.406
+          },
+          "throughput_tokens_sec": 527120.8,
+          "peak_memory_mb": 239.9
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 7.54,
+            "median": 7.485,
+            "std": 0.373,
+            "p95": 8.177,
+            "p99": 8.235
+          },
+          "throughput_tokens_sec": 543230.1,
+          "peak_memory_mb": 244.7
+        },
+        "speedup": 1.03,
+        "throughput_gain": 3.1,
+        "memory_savings_pct": -2.0,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      },
+      {
+        "config": "large",
+        "batch_size": 16,
+        "seq_len": 1024,
+        "d_model": 256,
+        "num_heads": 8,
+        "num_layers": 6,
+        "baseline": {
+          "latency_ms": {
+            "mean": 81.356,
+            "median": 81.474,
+            "std": 0.433,
+            "p95": 81.757,
+            "p99": 81.781
+          },
+          "throughput_tokens_sec": 201385.8,
+          "peak_memory_mb": 1659.6
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 82.19,
+            "median": 82.203,
+            "std": 0.362,
+            "p95": 82.741,
+            "p99": 82.899
+          },
+          "throughput_tokens_sec": 199343.0,
+          "peak_memory_mb": 1673.6
+        },
+        "speedup": 0.99,
+        "throughput_gain": -1.0,
+        "memory_savings_pct": -0.8,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      }
+    ],
+    "validation_tests": [
+      {
+        "test": "causal_padded",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "float16_causal",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "bfloat16_padded",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "minimal_sequence",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "compiled",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      }
+    ]
+  },
+  {
+    "direction": 7,
+    "impl": "/srv/vault/hot/SMU-Vault/Competition/2026TikTokTechJam/Track3/Rayner/exploration/directions/direction7/direction7_optimized.py",
+    "device": "cuda",
+    "cuda_available": true,
+    "configs": [
+      {
+        "config": "small",
+        "batch_size": 4,
+        "seq_len": 128,
+        "d_model": 64,
+        "num_heads": 4,
+        "num_layers": 2,
+        "baseline": {
+          "latency_ms": {
+            "mean": 1.238,
+            "median": 1.088,
+            "std": 0.274,
+            "p95": 1.728,
+            "p99": 1.931
+          },
+          "throughput_tokens_sec": 413510.4,
+          "peak_memory_mb": 31.5
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 1.105,
+            "median": 1.068,
+            "std": 0.067,
+            "p95": 1.225,
+            "p99": 1.263
+          },
+          "throughput_tokens_sec": 463549.0,
+          "peak_memory_mb": 34.6
+        },
+        "speedup": 1.12,
+        "throughput_gain": 12.1,
+        "memory_savings_pct": -9.8,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      },
+      {
+        "config": "medium",
+        "batch_size": 8,
+        "seq_len": 512,
+        "d_model": 128,
+        "num_heads": 8,
+        "num_layers": 4,
+        "baseline": {
+          "latency_ms": {
+            "mean": 4.006,
+            "median": 4.046,
+            "std": 0.294,
+            "p95": 4.458,
+            "p99": 4.502
+          },
+          "throughput_tokens_sec": 1022574.7,
+          "peak_memory_mb": 239.7
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 3.875,
+            "median": 3.905,
+            "std": 0.243,
+            "p95": 4.254,
+            "p99": 4.279
+          },
+          "throughput_tokens_sec": 1057079.6,
+          "peak_memory_mb": 245.0
+        },
+        "speedup": 1.03,
+        "throughput_gain": 3.4,
+        "memory_savings_pct": -2.2,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      },
+      {
+        "config": "large",
+        "batch_size": 16,
+        "seq_len": 1024,
+        "d_model": 256,
+        "num_heads": 8,
+        "num_layers": 6,
+        "baseline": {
+          "latency_ms": {
+            "mean": 33.923,
+            "median": 33.965,
+            "std": 0.379,
+            "p95": 34.438,
+            "p99": 34.585
+          },
+          "throughput_tokens_sec": 482978.8,
+          "peak_memory_mb": 1165.6
+        },
+        "optimized": {
+          "latency_ms": {
+            "mean": 34.351,
+            "median": 34.513,
+            "std": 0.515,
+            "p95": 34.963,
+            "p99": 35.063
+          },
+          "throughput_tokens_sec": 476956.6,
+          "peak_memory_mb": 1180.2
+        },
+        "speedup": 0.99,
+        "throughput_gain": -1.2,
+        "memory_savings_pct": -1.2,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "accuracy_pass": true
+      }
+    ],
+    "validation_tests": [
+      {
+        "test": "causal_padded",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "float16_causal",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "bfloat16_padded",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "minimal_sequence",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      },
+      {
+        "test": "compiled",
+        "accuracy_passed": false,
+        "speedup": 1.0,
+        "baseline_ms": null,
+        "optimized_ms": null
+      }
+    ]
+  },
+  {
+    "baseline_validation_tests": [
+      {
+        "test_name": "causal_padded",
+        "accuracy_passed": true,
+        "speedup": 1.011,
+        "baseline_median_ms": 3.2266,
+        "optimized_median_ms": 3.1923,
+        "exit_code": 0
+      },
+      {
+        "test_name": "float16_causal",
+        "accuracy_passed": true,
+        "speedup": 1.015,
+        "baseline_median_ms": 3.1477,
+        "optimized_median_ms": 3.0998,
+        "exit_code": 0
+      },
+      {
+        "test_name": "bfloat16_padded",
+        "accuracy_passed": true,
+        "speedup": 1.032,
+        "baseline_median_ms": 2.8852,
+        "optimized_median_ms": 2.7966,
+        "exit_code": 0
+      },
+      {
+        "test_name": "minimal_sequence",
+        "accuracy_passed": true,
+        "speedup": 1.002,
+        "baseline_median_ms": 0.474,
+        "optimized_median_ms": 0.4731,
+        "exit_code": 0
+      },
+      {
+        "test_name": "compiled_user",
+        "accuracy_passed": true,
+        "speedup": 7.483,
+        "baseline_median_ms": 1.023,
+        "optimized_median_ms": 0.1367,
+        "exit_code": 0
+      }
+    ]
+  }
+]
